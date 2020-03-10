@@ -48,15 +48,17 @@ function compareGuess(){
         if(userGuess > computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för högt!";
             document.getElementById('inputBox').value="";
+            document.getElementById('resultat').innerHTML ="Sorry Man test again!!!";
          
         } else if(userGuess < computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för lågt!";
             document.getElementById('inputBox').value="";
+            document.getElementById('resultat').innerHTML ="Sorry Man test again!!!";
          
    
         } else {
             document.getElementById('textOutput').innerHTML ="Ditt svar är rätt!";
-         
+            document.getElementById('resultat').innerHTML ="Grattttttiiiiiiis!! You win finally " + attempts+ ' attempts';
             document.getElementById('container').style.backgroundColor = 'green';
             gameOver();
             
