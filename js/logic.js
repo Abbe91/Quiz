@@ -29,8 +29,8 @@ function showGuess() {
     }
 
     if(showInputGuessInput){
-        document.getElementById("showInputGuess").value = showGuessInDisplay;
         document.getElementById("showInputGuess").value = "";
+
     }
 
     if(guessList == ""){
