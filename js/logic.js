@@ -13,8 +13,6 @@ function init(){
 
 
 let guessList = [];
-console.log(guessList);
-
 
 function showGuess() {
     let showInputGuessInput = guessList.push(document.getElementById("showInputGuess").value);
@@ -31,6 +29,7 @@ function showGuess() {
     }
 
     if(showInputGuessInput){
+        document.getElementById("showInputGuess").value = showGuessInDisplay;
         document.getElementById("showInputGuess").value = "";
     }
 
@@ -41,7 +40,11 @@ function showGuess() {
             text: 'Ange siffra!',
         });
     }
+    document.getElementById('guessLog').innerHTML = showGuessInDisplay  ;
 
     console.log(showInputGuessInput);
     console.log(showGuessInDisplay);   
 }
+
+
+
