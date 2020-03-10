@@ -1,0 +1,11 @@
+#showGuessInDisplay{
+    border: 2px solid black;
+    width: 98%; 
+    height: 10em; 
+    color: red; 
+    padding: 10px; 
+    font-size: 20px;
+}
+h4{
+    text-align: center;
+}
