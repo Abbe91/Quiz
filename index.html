@@ -4,36 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/jigsaw.png" /> <!-- ### Favicon ### -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script defer src="js/logic.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/logic.js"></script>
     <title>Quizz App</title>
 </head>
 <body onload="init()">
-<div id="container">
-    <div class="panel">
-        <h2>Jag har ett slumpmässigt antal <br>Mellan 1-10</h2>
-        <h3>Vågar gissa?</h3><hr>
+    <div id="container">
+        <div class="panel">
+            <h1>Quiz - Gissa siffran!</h1>
+            Läs om spelreglerna:  <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
 
-        <p>välja svårighetsinställning:</p>
-        <button id="rulesBtn" onclick="rules()" class="">Spelets Regler</button>
+            <p>Välja svårighetsinställning:</p>
+            <button id="easyBtn" onclick="easyMode()" class="">Enkelt: Gissa på 10 försök (standard)</button>
+            <button id="hardBtn" onclick="hardMode()" class="">Svårt: Gissa i 5 försök</button>
+            <button id="newGameButton" onclick="newGame()">Börja om!!</button>
+        </div>
+        <div class="panel"></div>
+        <h3 id="textOutput">Skriv din gissning här och trycka på Enter:</h3>
+        <input type="number" id="inputBox" onchange="compareGuess()">
+        <p>Antal tidigare försök: <span id="attempts"></span></p>
+        <div class="panel">
+        <p>Dina tidigare gissningar: <span id="guessLog"></span></p>
+        </div>
+       <!-- <div>
+            <p id="resultat">Are you ready!!!!!</p>
+        </div> -->
+    
+     
     </div>
-</div>
-<div class="panel">
-<h3 id="textOutput">Vilken nummer tänker du på... &amp; tryck enter</h3>
-</div>
-<input type="number" name="" id="showInputGuess" onchange="showGuess();"; placeholder="Gissa siffra">
-<hr>
-<h4>Tidigare Gisningar</h4>
-<div id="showGuessInDisplay"></div>
-<br>
-Antal försök: <p id="tryCount"></p>
-<div>
-    <p id="resultat">Are you ready!!!!!</p>
-</div>
-
-
 </body>
 </html>

@@ -1,11 +1,42 @@
-/* #showGuessInDisplay{
-    border: 2px solid black;
-    width: 98%; 
-    height: 10em; 
-    color: red; 
-    padding: 10px; 
-    font-size: 20px;
+body{
+    font-size: 1.2em;
+    font-family: 'Sen', sans-serif;
+    
 }
-h4{
+#container{
+    max-width: 80%;
+    margin: 0 auto;
     text-align: center;
-}  */
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(63, 151, 151);
+    opacity: 0.91;
+    margin-top:62px;
+}
+.panel{
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid white;
+
+}
+button{
+    background: rgb(113, 196, 221);
+    height: 3em;
+    width: 80%;
+    margin-bottom: 1.5em;
+    color: white;
+    font-size: 0.8em;
+    opacity: 1;
+}
+input{
+    border-radius: 10px;
+    width: 80%;
+    height: 4em;
+    text-align: center;
+}
+
+.activeButton{
+    background: green;
+}
