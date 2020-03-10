@@ -40,7 +40,7 @@ function showGuess() {
             text: 'Ange siffra!',
         });
     }
-    document.getElementById('guessLog').innerHTML = showGuessInDisplay  ;
+    
 
     console.log(showInputGuessInput);
     console.log(showGuessInDisplay);   
