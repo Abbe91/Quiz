@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/logic.js"></script>
+    <link rel="icon" href="img/jigsaw.png" /> <!-- ### Favicon ### -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script defer src="js/logic.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <title>Quizz App</title>
 </head>
@@ -19,7 +21,16 @@
         <button id="rulesBtn" onclick="rules()" class="">Spelets Regler</button>
     </div>
 </div>
-     
+
+
+<input type="number" name="" id="showInputGuess" onchange="showGuess();"; placeholder="Gissa siffra">
+<button id="pushInArray" onclick="showGuess(); ">Gissa</button>
+<hr>
+<h4>Tidigare Gisningar</h4>
+<div id="showGuessInDisplay"></div>
+<br>
+Antal försök: <p id="tryCount"></p>
+
 
 </body>
 </html>
