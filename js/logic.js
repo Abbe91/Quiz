@@ -48,12 +48,12 @@ function compareGuess(){
         if(userGuess > computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för högt!";
             document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Sorry Man test again!!!";
+            document.getElementById('resultat').innerHTML ="Du var nära att vinna. Prova igen!!!";
          
         } else if(userGuess < computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för lågt!";
             document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Sorry Man test again!!!";
+            document.getElementById('resultat').innerHTML ="Du var nära att vinna. Prova igen!!!";
          
    
         } else {
