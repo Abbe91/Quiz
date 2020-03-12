@@ -81,7 +81,7 @@ function compareGuess(){
             
         }
     } else {
-        if(userGuess > compareGuess ){
+        if(userGuess > computerGuess ){
             document.getElementById('textOutput').innerHTML ="Game over! " + " Det rätta svaret var "+ computerGuess;
             document.getElementById('container').style.backgroundColor = 'red';
             gameOver();
