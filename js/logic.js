@@ -48,17 +48,17 @@ function compareGuess(){
         if(userGuess > computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för högt!";
             document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Du var nära att vinna. Prova igen!!!";
+            document.getElementById('resultat').innerHTML ="Fel! Prova igen!";
          
         } else if(userGuess < computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för lågt!";
             document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Du var nära att vinna. Prova igen!!!";
+            document.getElementById('resultat').innerHTML ="Fel! Prova igen!";
          
    
         } else {
             document.getElementById('textOutput').innerHTML ="Ditt svar är rätt!";
-            document.getElementById('resultat').innerHTML ="Grattttttiiiiiiis!! You win finally " + attempts+ ' attempts';
+            document.getElementById('resultat').innerHTML ="Rätt! Grattis, du vann i " + attempts+ ' försök och samlade ' + nrOfPoints + ' pöang';
             document.getElementById('container').style.backgroundColor = 'green';
             gameOver();
             
