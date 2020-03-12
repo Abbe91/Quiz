@@ -14,7 +14,7 @@ function gameOver(){
     document.getElementById('easyBtn').style.display= 'none';
     document.getElementById('hardBtn').style.display = 'none';
     document.getElementById('inputBox').setAttribute('readonly', 'readonly');
-    document.getElementById('points').innerHTML = 0;
+    
     
 }
 
@@ -76,24 +76,28 @@ function compareGuess(){
             document.getElementById('textOutput').innerHTML ="Ditt svar är rätt!";
             document.getElementById('resultat').innerHTML ="Rätt! Grattis, du vann i " + attempts+ ' försök och samlade ' + points + ' pöang';
             document.getElementById('container').style.backgroundColor = 'green';
+            document.getElementById('points').innerHTML = points;
             gameOver();
             
         }
     } else {
-        if(userGuess > compareGuess ){
+        if(userGuess > computerGuess ){
             document.getElementById('textOutput').innerHTML ="Game over! " + " Det rätta svaret var "+ computerGuess;
             document.getElementById('container').style.backgroundColor = 'red';
             gameOver();
+            document.getElementById('points').innerHTML = 0;
            
         }else if (userGuess < computerGuess){
             document.getElementById('textOutput').innerHTML ="Game over!" + " Det rätta svaret var "+ computerGuess;
             document.getElementById('container').style.backgroundColor = 'red';
             gameOver();
+            document.getElementById('points').innerHTML = 0;
         
         }else {
             document.getElementById('textOutput').innerHTML ="GRATTIS! Ditt svar " + computerGuess + " är korrekt!";
             document.getElementById('container').style.backgroundColor = 'green';
             gameOver();
+            document.getElementById('points').innerHTML = points;
         }
     }
 
