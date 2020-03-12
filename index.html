@@ -16,19 +16,31 @@
             Läs om spelreglerna:  <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
 
             <p>Välja svårighetsinställning:</p>
-            <button id="easyBtn" onclick="easyMode()" class="">Enkelt: Gissa på 10 försök (standard)</button>
-            <button id="hardBtn" onclick="hardMode()" class="">Svårt: Gissa i 5 försök</button>
+            <button id="easyBtn" onclick="easyMode()" class="">Enkelt (10 försök)</button>
+            <button id="hardBtn" onclick="hardMode()" class="">Svårt (5 försök)</button>
             <button id="newGameButton" onclick="newGame()">Börja om!!</button>
         </div>
-        <div class="panel"></div>
-        <h3 id="textOutput">Skriv din gissning här och trycka på Enter:</h3>
+        <div class="panel" id="botAnswer">
+            <img src="./img/robot.gif" width="200px;" alt="robotGif" id="robotImg" style="border-radius: 25px;">
+            <p>Jag tänker på ett nummer mellan 1 och 10... kan du gissa det?</p>
+        </div>
+        <h3 id="textOutput"></h3>
         <input type="number" id="inputBox" onchange="compareGuess()">
-        <p>Antal tidigare försök: <span id="attempts"></span></p>
-        <div class="panel">
-        <p>Dina tidigare gissningar: <span id="guessLog"></span></p>
+        <div id="panelCont">
+            <div class="panel">
+                <p>Antal tidigare försök: <br><span id="attempts"></span></p>
+            </div>
+            
+            <div class="panel">
+                <p>Dina tidigare gissningar: <br><span id="guessLog"></span></p>
+            </div>
+
+            <div class="panel">
+                    <p>Dina samlade poäng: <br><span id="points"></span></p>
+                </div>
         </div>
        <div>
-            <p id="resultat">Are you ready!!!!!</p>
+            <p id="resultat">Är du redo? Kör!</p>
         </div>
     
      

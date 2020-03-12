@@ -1,6 +1,7 @@
 body{
     font-size: 1.2em;
     font-family: 'Sen', sans-serif;
+    background-image: url('../img/bot-back.jpg');
     
 }
 #container{
@@ -10,7 +11,6 @@ body{
     border-radius: 10px;
     padding: 10px;
     background-color: rgb(63, 151, 151);
-    opacity: 0.91;
     margin-top:62px;
 }
 .panel{
@@ -29,6 +29,8 @@ button{
     color: white;
     font-size: 0.8em;
     opacity: 1;
+    border:none;
+    border-radius: 10px;
 }
 input{
     border-radius: 10px;
@@ -40,3 +42,9 @@ input{
 .activeButton{
     background: green;
 }
+
+#panelCont {
+    display:flex;
+    flex-wrap: wrap;
+}
+
