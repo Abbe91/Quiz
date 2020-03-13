@@ -1,18 +1,10 @@
 <?php
+session_start();
 // Create connection
 $db = mysqli_connect("localhost", "root", "root","database_quiz");
-// Check connection
- if (!$db) {
-    die("Connection failed: " . mysqli_connect_error());
- }
- echo "Connected successfully";
-
 $username = "";
 $email = "";
 $errors = array();
-
-
-
 //If register button is clicked
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -38,20 +30,9 @@ if (isset($_POST['register'])) {
         $sql = "INSERT INTO users (username,email,password)
      VALUES('$username','$email','$password')";
         mysqli_query($db, $sql);
+        $_SESSION['username']=$username;
+        $_SESSION['success']="You are now logged in";
+        header('location:../index.php');//redirect to home page
     }
-
-
-
-
-
 } 
-
-
-
-
-
-
-
-
-
 ?> 
