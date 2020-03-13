@@ -7,7 +7,6 @@ $db = mysqli_connect("localhost", "root", "root","database_quiz");
  }
  echo "Connected successfully";
 
-
 $username = "";
 $email = "";
 $errors = array();
