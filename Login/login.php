@@ -1,4 +1,4 @@
-<?php include ('server.php') ?>
+<?php include('server.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,18 +23,20 @@
         <div class="register">
             <h2>Login</h2>
             <form method="POST" action="login.php">
+                <!-- Display validation errors here -->
+                <?php include('errors.php') ?>
                 <div class="input-group">
                     <label>Username</label>
                     <input type="text" name="username">
                 </div>
-                
+
                 <div class="input-group">
                     <label>Password</label>
-                    <input type="password" name="password_1">
+                    <input type="password" name="password">
                 </div>
-                
+
                 <div class="input-group">
-                    <button type="submit" name="login" class="btn">Register</button>
+                    <button type="submit" name="login" class="btn">Log in</button>
                 </div>
                 <p>
 

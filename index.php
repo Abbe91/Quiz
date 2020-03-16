@@ -1,4 +1,9 @@
-<?php include ('./Login/server.php') ?>
+<?php include('./Login/server.php');
+//If user is not logged in , they cannot access this page
+if (empty($_SESSION['username'])) {
+    header('location:Login/login.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,24 +22,17 @@
 <body onload="init()">
 
     <div id="container">
-    <div class="content">
-
-<?php if(isset($_SESSION['success'])): ?>
-
-<div class="error success">
-<h3>
-<?php echo $_SESSION['success']; 
-echo $_SESSION['success'];
-?>
-</h3>
-</div>
-<?php endif ?>
-<?php if(isset($_SESSION['username'])): ?>
-<p>Welcome<strong><?php echo $_SESSION['username'];  ?></strong></p>
-<p><a href="" style="color: red;">Logout</a></p>
-<?php endif ?>
-
-</div>
+        <div class="content">
+            <?php if (isset($_SESSION['success'])) : ?>
+                <div class="error success">
+                    <h3><?php echo $_SESSION['success'];?></h3>
+                </div>
+            <?php endif ?>
+            <?php if (isset($_SESSION['username'])) : ?>
+                <p>Welcome :<strong><?php echo $_SESSION['username'];  ?></strong></p>
+                <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Log out</a></p>
+            <?php endif ?>
+        </div>
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
             Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
@@ -66,8 +64,6 @@ echo $_SESSION['success'];
         <div>
             <p id="resultat">Är du redo? Kör!</p>
         </div>
-
-
     </div>
 </body>
 

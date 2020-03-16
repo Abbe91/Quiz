@@ -101,3 +101,11 @@ form {
     -o-border-radius: 5px;
     text-align: center;
 }
+
+.logout {
+    color: white;
+    background: #71c4dd;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
