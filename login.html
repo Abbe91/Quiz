@@ -12,9 +12,12 @@
     <script defer src="/js/logic.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.message a').click(function () {
-                $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
+        $(document).ready(function() {
+            $('.message a').click(function() {
+                $('form').animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                }, "slow");
             });
         });
     </script>
@@ -24,13 +27,14 @@
     <div class="login-page">
         <div class="form">
             <form class="register-form">
-                <input type="text" placeholder="name" id="playerName" />
-                <button  onclick="addPlayerName()">create</button>
+
+                <input type="text" placeholder="playerName" id="playerName" />
+                <button onclick="addPlayerName()">Register</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
             </form>
             <form class="login-form">
-                <input type="text" placeholder="username" id="loginUser"/>
-                
+                <input type="text" placeholder="playerName" id="loginUser" />
+
                 <button>login</button>
                 <p class="message">Not registered? <a href="#">Register here</a></p>
             </form>
