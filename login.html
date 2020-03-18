@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>SignUp Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/logRegist.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <script defer src="/js/logic.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.message a').click(function() {
+                $('form').animate({
+                    height: "toggle",
+                    opacity: "toggle"
+                }, "slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+
+                <input type="text" placeholder="playerName" id="playerName" />
+                <button onclick="addPlayerName()">Register</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            <form class="login-form">
+                <input type="text" placeholder="playerName" id="loginUser" />
+
+                <button>login</button>
+                <p class="message">Not registered? <a href="#">Register here</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
