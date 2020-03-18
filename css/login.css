@@ -1,0 +1,88 @@
+body {
+    font-size: 1.2em;
+    font-family: 'Sen', sans-serif;
+    background-image: url('../img/bot-back.jpg');
+}
+
+#container {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(63, 151, 151);
+    margin-top: 62px;
+}
+
+.panel {
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+button {
+    background: rgb(113, 196, 221);
+    height: 3em;
+    width: 80%;
+    margin-bottom: 1.5em;
+    color: white;
+    font-size: 0.8em;
+    opacity: 1;
+    border: none;
+    border-radius: 10px;
+}
+
+input {
+    border-radius: 10px;
+    width: 40%;
+    height: 2em;
+    text-align: center;
+}
+
+.activeButton {
+    background: green;
+}
+
+#panelCont {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register {
+    width: 30%;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+}
+
+.input-group {
+    margin: 10px 0 10px 0;
+}
+
+.input-group label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+}
+
+.input-group input {
+    height: 30px;
+    width: 90%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 15px;
+}
