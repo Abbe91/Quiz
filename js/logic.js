@@ -15,8 +15,7 @@ function makeRequest(url, method, formdata, callback) {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-}
-
+}      
 
 function rules() { 
     window.open('./rules.html', '_blank'); 
@@ -56,6 +55,7 @@ function init(){
 
 
 function compareGuess(){
+    
     var pointsBox = document.getElementById('points');
     var userGuess =" " + document.getElementById('inputBox').value;
     console.log(userGuess);
@@ -63,8 +63,6 @@ function compareGuess(){
     document.getElementById('guessLog').innerHTML= userGuessLog;
     attempts++;
     document.getElementById('attempts').innerHTML = attempts;
-
-
 
     if(userGuessLog.length < MaxGusses){
         if(userGuess > computerGuess){
@@ -90,12 +88,15 @@ function compareGuess(){
             document.getElementById('resultat').innerHTML ="Rätt! Grattis, du vann i " + attempts+ ' försök och samlade ' + points + ' pöang';
             document.getElementById('container').style.backgroundColor = 'green';
             document.getElementById('points').innerHTML = points;
-            gameOver();
-            
+            gameOver(); 
+
+            var inloggedUserName = document.getElementById("inloggedUserName").textContent;
+
             var data = new FormData();
 
             data.append("action", "updateScore");
-            data.append("points", userGuess);
+            data.append("points", points);
+            data.append("inloggedUserName", inloggedUserName);
 
         }
     } else {
@@ -123,5 +124,4 @@ function compareGuess(){
         
         console.log(result);
     })
-
 }

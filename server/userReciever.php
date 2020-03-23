@@ -5,6 +5,7 @@ try{
             include_once("./userHandler.php"); 
               echo json_encode(updateHighScore(
                 $_POST["points"],
+                $_POST["inloggedUserName"]
             ));
             exit;
         }else{
@@ -13,6 +14,4 @@ try{
     } } catch(Exception $e) {
         echo json_encode(array("Message" => $e->getMessage(), "Status" => $e->getCode()));
     }
-  
-
 ?>
