@@ -47,7 +47,7 @@ if (empty($_SESSION['username'])) {
             <p>Jag tänker på ett nummer mellan 1 och 10... kan du gissa det?</p>
         </div>
         <h3 id="textOutput"></h3>
-        <input type="number" id="inputBox" onchange="compareGuess()">
+        <input type="number" id="inputBox" onchange="compareGuess()" placeholder="Skriv en siffra och tryck på enter">
         <div id="panelCont">
             <div class="panel">
                 <p>Antal tidigare försök: <br><span id="attempts"></span></p>
