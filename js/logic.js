@@ -4,6 +4,19 @@ var attempts = 0;
 var MaxGusses= 10;
 var points = 9;
 
+function makeRequest(url, method, formdata, callback) {
+    fetch(url, {
+        method: method,
+        body: formdata
+    }).then((data) => {
+        return data.json()
+    }).then((result) => {
+        callback(result)
+    }).catch((err) => {
+        console.log("Error: ", err)
+    })
+}
+
 
 function rules() { 
     window.open('./rules.html', '_blank'); 
@@ -51,6 +64,8 @@ function compareGuess(){
     attempts++;
     document.getElementById('attempts').innerHTML = attempts;
 
+
+
     if(userGuessLog.length < MaxGusses){
         if(userGuess > computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för högt!";
@@ -58,10 +73,8 @@ function compareGuess(){
             document.getElementById('resultat').innerHTML ="Fel! Prova igen!";
             
             pointsBox.innerHTML = points;
-            points--;
-            
-            
-            
+            points--;    
+
          
         } else if(userGuess < computerGuess){
             document.getElementById('textOutput').innerHTML =" Siffran är för lågt!";
@@ -79,6 +92,11 @@ function compareGuess(){
             document.getElementById('points').innerHTML = points;
             gameOver();
             
+            var data = new FormData();
+
+            data.append("action", "updateScore");
+            data.append("points", userGuess);
+
         }
     } else {
         if(userGuess > computerGuess ){
@@ -100,5 +118,10 @@ function compareGuess(){
             document.getElementById('points').innerHTML = points;
         }
     }
+
+    makeRequest('./../server/userReciever.php', "POST", data, (result) => {
+        
+        console.log(result);
+    })
 
 }
