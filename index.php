@@ -33,6 +33,18 @@ if (empty($_SESSION['username'])) {
                 <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Log out</a></p>
             <?php endif ?>
         </div>
+        <section id="button-section">
+            <button onclick="showPints();">Top Lista</button>
+        </section>
+        <section id="topLista">
+            <h1 align="center">TopLista</h1>
+                <table id=lista>
+                        <tr>
+                            <th>Username</th>
+                            <th>poang</th>   
+                        </tr>
+                </table>
+        </section>
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
             Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>

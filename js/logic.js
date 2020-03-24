@@ -95,7 +95,7 @@ function compareGuess(){
             var data = new FormData();
 
             data.append("action", "updateScore");
-            data.append("points", userGuess);
+            data.append("points", points--);
 
         }
     } else {
@@ -125,3 +125,28 @@ function compareGuess(){
     })
 
 }
+
+function showPints() {
+    makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
+    var topLista = document.getElementById("topLista");
+
+    topLista.style.display = "none";
+
+    })
+}
+// function getAllPints() {
+//     makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
+       
+
+//         for (let i = 0; i < result.length; i++) {
+      
+//             let Username = document.createElement("td");
+//             let poang = document.createElement("td");
+
+//             Username.innerText = Username;
+//             poang.innerText = poang;
+
+//         }
+//     })
+// }
+// getAllPints();
