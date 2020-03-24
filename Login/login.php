@@ -40,7 +40,7 @@
                 </div>
                 <p>
 
-                    Har du inget konto? <a href="register.php">Skaffa det här</a>
+                    Har du inget konto? <br> <a href="register.php">Skaffa det här</a>
 
                 </p>
             </form>

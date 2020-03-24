@@ -46,7 +46,7 @@
                 </div>
                 <p>
 
-                    Har du inloggning? <a href="login.php">Logga in här</a>
+                    Har du redan konto? <br> <a href="login.php">Logga in här</a>
 
                 </p>
             </form>
