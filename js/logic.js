@@ -120,7 +120,7 @@ function compareGuess(){
         }
     }
 
-    makeRequest('./../server/userReciever.php', "POST", data, (result) => {
+    makeRequest('../server/userReciever.php', "POST", data, (result) => {
         
         console.log(result);
     })
