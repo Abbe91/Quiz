@@ -144,10 +144,7 @@ function showPints() {
              row.appendChild(pUserName);
              row.appendChild(pPoints);
              topListan.appendChild(row);
-             
-            // let Username = document.createElement("td");
-            // let poang = document.createElement("td");
-            console.log(result[i]);
+           
 
          }
 
