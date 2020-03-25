@@ -30,7 +30,7 @@ if (empty($_SESSION['username'])) {
             <?php endif ?>
             <?php if (isset($_SESSION['username'])) : ?>
                 <p>Välkommen: <strong id="inloggedUserName"><?php echo $_SESSION['username']; ?></strong></p>
-                <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Log out</a></p>
+                <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Logga ut</a></p>
             <?php endif ?>
         </div>
         <div class="panel">
