@@ -36,15 +36,11 @@ if (empty($_SESSION['username'])) {
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
             Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
+          
             <section >
+            <button onclick="showPints();">Top Lista</button>
                 <div id="topLista">
-                    <h1 align="center">TopLista</h1>
-                    <table id=lista>
-                            <tr>
-                                <th>Username</th>
-                                <th>poang</th>   
-                            </tr>
-                    </table>
+                   
                 </div>
         </section>
 
