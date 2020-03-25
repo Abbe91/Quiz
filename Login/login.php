@@ -21,26 +21,26 @@
         </div>
 
         <div class="register">
-            <h2>Login</h2>
+            <h2>Inloggning</h2>
             <form method="POST" action="login.php">
                 <!-- Display validation errors here -->
                 <?php include('errors.php') ?>
                 <div class="input-group">
-                    <label>Username</label>
+                    <label>Användarnamn</label>
                     <input type="text" name="username">
                 </div>
 
                 <div class="input-group">
-                    <label>Password</label>
+                    <label>Lösenord</label>
                     <input type="password" name="password">
                 </div>
 
                 <div class="input-group">
-                    <button type="submit" name="login" class="btn">Log in</button>
+                    <button type="submit" name="login" class="btn">Logga in</button>
                 </div>
                 <p>
 
-                    Not yet a member? <a href="register.php">Sign up</a>
+                    Har du inte ett konto? <a href="register.php">Registrera dig här!</a>
 
                 </p>
             </form>

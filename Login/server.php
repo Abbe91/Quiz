@@ -13,16 +13,16 @@ if (isset($_POST['register'])) {
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     //Ensure that form fields are filled properly
     if (empty($username)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Användarnman krävs");
     }
     if (empty($email)) {
-        array_push($errors, "Email is required");
+        array_push($errors, "En mejladress krävs");
     }
     if (empty($password_1)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Ett lösenord krävs");
     }
     if ($password_1 != $password_2) {
-        array_push($errors, "The two passwords do not match");
+        array_push($errors, "Lösenord matchar inte!");
     }
     //If there are no errors , save user to database
     if (count($errors) == 0) {
@@ -33,7 +33,7 @@ if (isset($_POST['register'])) {
 
 
         $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in.";
+        $_SESSION['success'] = "Du är inloggad";
         header('location:../index.php'); //redirect to home page
     }
 }
