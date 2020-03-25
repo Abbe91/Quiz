@@ -21,7 +21,9 @@
         </div>
 
         <div class="register">
-            <h2>Inloggning</h2>
+
+            <h2>Logga in</h2>
+
             <form method="POST" action="login.php">
                 <!-- Display validation errors here -->
                 <?php include('errors.php') ?>
@@ -40,7 +42,9 @@
                 </div>
                 <p>
 
-                    Har du inte ett konto? <a href="register.php">Registrera dig här!</a>
+
+                    Har du inget konto? <br> <a href="register.php">Skaffa det här</a>
+
 
                 </p>
             </form>

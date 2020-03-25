@@ -29,7 +29,9 @@ if (empty($_SESSION['username'])) {
                 </div>
             <?php endif ?>
             <?php if (isset($_SESSION['username'])) : ?>
+
                 <p>Välkommen: <strong id="inloggedUserName"><?php echo $_SESSION['username']; ?></strong></p>
+
                 <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Logga ut</a></p>
             <?php endif ?>
         </div>
@@ -44,17 +46,17 @@ if (empty($_SESSION['username'])) {
                 </div>
         </section>
 
-            <p>Välja svårighetsinställning:</p>
+            <p>Välj svårighetsinställning:</p>
             <button id="easyBtn" onclick="easyMode()" class="">Enkelt (10 försök)</button>
             <button id="hardBtn" onclick="hardMode()" class="">Svårt (5 försök)</button>
             <button id="newGameButton" onclick="newGame()">Börja om!!</button>
         </div>
         <div class="panel" id="botAnswer">
             <img src="./img/robot.gif" width="200px;" alt="robotGif" id="robotImg" style="border-radius: 25px;">
-            <p>Jag tänker på ett nummer mellan 1 och 10... kan du gissa det?</p>
+            <p>Jag tänker på en siffra mellan 1 och 10... kan du gissa siffran?</p>
         </div>
         <h3 id="textOutput"></h3>
-        <input type="number" id="inputBox" onchange="compareGuess()">
+        <input type="number" id="inputBox" onchange="compareGuess()" placeholder="Skriv en siffra och tryck på enter">
         <div id="panelCont">
             <div class="panel">
                 <p>Antal tidigare försök: <br><span id="attempts"></span></p>

@@ -33,7 +33,9 @@ if (isset($_POST['register'])) {
 
 
         $_SESSION['username'] = $username;
-        $_SESSION['success'] = "Du är inloggad";
+
+        $_SESSION['success'] = "Du är inloggad."; //"You are now logged in.";
+
         header('location:../index.php'); //redirect to home page
     }
 }
@@ -44,10 +46,12 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
     //Ensure that form fields are filled properly
     if (empty($username)) {
-        array_push($errors, "Användarnman krävs");
+
+        array_push($errors, "Användarnamn krävs"); //"Username is required"
     }
     if (empty($password)) {
-        array_push($errors, "Lösenord krävs");
+        array_push($errors, "Lösenord krävs"); //"Password is required"
+
     }
 
     if (count($errors) ==0) {
@@ -57,10 +61,12 @@ if (isset($_POST['login'])) {
         if (mysqli_num_rows($result) == 1) {
             //log user in
             $_SESSION['username'] = $username;
-            $_SESSION['success'] = "Du är inloggad";
+
+            $_SESSION['success'] = "Du är inloggad."; //"You are now logged in.";
             header('location:../index.php'); //redirect to home page        
         } else {
-            array_push($errors, "Användarnamn eller lösenord är fel!");
+            array_push($errors, "Fel användarnamn och/eller lösenord"); //"Wrong username/password combination");
+
 
         }
     }

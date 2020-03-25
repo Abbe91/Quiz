@@ -20,33 +20,37 @@
         </div>
 
         <div class="register">
-            <h2>Registering</h2>
+
+            <h2>Skapa konto</h2>
+
             <form method="POST" action="register.php">
                 <!-- Display validation errors here -->
                 <?php include ('errors.php') ?>
 
                 <div class="input-group">
-                    <label>Användarnamn:</label>
+
+                    <label>Användarnamn</label>
                     <input type="text" name="username">
                 </div>
                 <div class="input-group">
-                    <label>E-mejl:</label>
+                    <label>E-post</label>
                     <input type="text" name="email">
                 </div>
                 <div class="input-group">
-                    <label>Lösenord:</label>
+                    <label>Lösenord</label>
                     <input type="password" name="password_1">
                 </div>
                 <div class="input-group">
-                    <label>Bekräfta lösenord:</label>
+                    <label>Bekräfta lösenord</label>
                     <input type="text" name="password_2">
                 </div>
                 <div class="input-group">
-                    <button type="submit" name="register" class="btn">Skicka</button>
+                    <button type="submit" name="register" class="btn">Skapa konto</button>
                 </div>
                 <p>
 
-                    Har du redan ett konto? <a href="login.php">Logga in</a>
+                    Har du redan konto? <br> <a href="login.php">Logga in här</a>
+
 
                 </p>
             </form>
