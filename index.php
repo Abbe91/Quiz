@@ -40,7 +40,7 @@ if (empty($_SESSION['username'])) {
             Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
           
         <section id="toplistaSec">
-            <button onclick="toggleToplist()">Top Lista</button>
+            <button onclick="showTheListaOnAnotherSite()">Top Lista</button>
                 <div id="topLista">
                    
                 </div>

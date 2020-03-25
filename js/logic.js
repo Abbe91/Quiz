@@ -163,3 +163,8 @@ function showPints() {
 
     })
 }
+showPints()
+
+function showTheListaOnAnotherSite(){
+    
+}
