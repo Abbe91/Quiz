@@ -128,25 +128,28 @@ function compareGuess(){
 
 function showPints() {
     makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
-    var topLista = document.getElementById("topLista");
+        //console.log(result);
+        var topListan = document.getElementById('topLista');
+      
+         for (let i = 0; i < result.length; i++) {
+             var username = (result[i].username)
+             var points = (result[i].points)
+             var row = document.createElement('div');
 
-    topLista.style.display = "none";
+             var pUserName = document.createElement('p');
+             var pPoints = document.createElement('p');
+
+             pUserName.innerText = username;
+             pPoints.innerText = points;
+             row.appendChild(pUserName);
+             row.appendChild(pPoints);
+             topListan.appendChild(row);
+             
+            // let Username = document.createElement("td");
+            // let poang = document.createElement("td");
+            console.log(result[i]);
+
+         }
 
     })
 }
-// function getAllPints() {
-//     makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
-       
-
-//         for (let i = 0; i < result.length; i++) {
-      
-//             let Username = document.createElement("td");
-//             let poang = document.createElement("td");
-
-//             Username.innerText = Username;
-//             poang.innerText = poang;
-
-//         }
-//     })
-// }
-// getAllPints();

@@ -36,14 +36,17 @@ if (empty($_SESSION['username'])) {
         <section id="button-section">
             <button onclick="showPints();">Top Lista</button>
         </section>
-        <section id="topLista">
+        <section >
+        <div id="topLista">
             <h1 align="center">TopLista</h1>
-                <table id=lista>
-                        <tr>
-                            <th>Username</th>
-                            <th>poang</th>   
-                        </tr>
-                </table>
+            <table id=lista>
+                    <tr>
+                        <th>Username</th>
+                        <th>poang</th>   
+                    </tr>
+            </table>
+        </div>
+           
         </section>
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
@@ -77,6 +80,7 @@ if (empty($_SESSION['username'])) {
             <p id="resultat">Är du redo? Kör!</p>
         </div>
     </div>
+   
 </body>
 
 </html>
