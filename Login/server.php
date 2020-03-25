@@ -13,16 +13,16 @@ if (isset($_POST['register'])) {
     $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
     //Ensure that form fields are filled properly
     if (empty($username)) {
-        array_push($errors, "Username is required");
+        array_push($errors, "Användarnman krävs");
     }
     if (empty($email)) {
-        array_push($errors, "Email is required");
+        array_push($errors, "En mejladress krävs");
     }
     if (empty($password_1)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Ett lösenord krävs");
     }
     if ($password_1 != $password_2) {
-        array_push($errors, "The two passwords do not match");
+        array_push($errors, "Lösenord matchar inte!");
     }
     //If there are no errors , save user to database
     if (count($errors) == 0) {
@@ -33,7 +33,9 @@ if (isset($_POST['register'])) {
 
 
         $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in.";
+
+        $_SESSION['success'] = "Du är inloggad."; //"You are now logged in.";
+
         header('location:../index.php'); //redirect to home page
     }
 }
@@ -44,10 +46,12 @@ if (isset($_POST['login'])) {
     $password = mysqli_real_escape_string($db, $_POST['password']);
     //Ensure that form fields are filled properly
     if (empty($username)) {
-        array_push($errors, "Username is required");
+
+        array_push($errors, "Användarnamn krävs"); //"Username is required"
     }
     if (empty($password)) {
-        array_push($errors, "Password is required");
+        array_push($errors, "Lösenord krävs"); //"Password is required"
+
     }
 
     if (count($errors) ==0) {
@@ -57,10 +61,12 @@ if (isset($_POST['login'])) {
         if (mysqli_num_rows($result) == 1) {
             //log user in
             $_SESSION['username'] = $username;
-            $_SESSION['success'] = "You are now logged in.";
+
+            $_SESSION['success'] = "Du är inloggad."; //"You are now logged in.";
             header('location:../index.php'); //redirect to home page        
         } else {
-            array_push($errors, "Wrong username/password combination");
+            array_push($errors, "Fel användarnamn och/eller lösenord"); //"Wrong username/password combination");
+
 
         }
     }

@@ -34,6 +34,16 @@ button {
     border-radius: 10px;
 }
 
+button:hover {
+    background:rgb(8, 117, 150);
+    color: white;  
+}
+
+.logout:hover {
+    background:rgb(8, 117, 150);
+    color: white;  
+}
+
 input {
     border-radius: 10px;
     width: 40%;

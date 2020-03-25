@@ -21,17 +21,19 @@
         </div>
 
         <div class="register">
-            <h2>Login</h2>
+
+            <h2>Logga in</h2>
+
             <form method="POST" action="login.php">
                 <!-- Display validation errors here -->
                 <?php include('errors.php') ?>
                 <div class="input-group">
-                    <label>Användarnamn:</label>
+                    <label>Användarnamn</label>
                     <input type="text" name="username">
                 </div>
 
                 <div class="input-group">
-                    <label>Lösenord:</label>
+                    <label>Lösenord</label>
                     <input type="password" name="password">
                 </div>
 
@@ -40,7 +42,9 @@
                 </div>
                 <p>
 
-                    Har du inte ett konto? <a href="register.php">Registrera dig!</a>
+
+                    Har du inget konto? <br> <a href="register.php">Skaffa det här</a>
+
 
                 </p>
             </form>

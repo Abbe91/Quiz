@@ -32,6 +32,12 @@ button{
     border:none;
     border-radius: 10px;
 }
+
+button:hover{
+    background:rgb(8, 117, 150);
+    color: white;
+}
+
 input{
     border-radius: 10px;
     width: 80%;
@@ -48,8 +54,34 @@ input{
     flex-wrap: wrap;
 }
 
-button:hover {
-    background: blue;
-    color: white;
+#topLista {
+   
+    border-radius: 20%;
+    padding: 15px;
 }
 
+.pointsLista {
+    font-weight: 700;
+    padding: 15px;
+}
+
+.userLista {
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    width: 60%;
+    margin: 0 auto;
+    padding:5px;
+}
+
+#toplistaSec {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+    .userLista {
+        font-size: 10px;
+        width: 150px;
+    }
+}
+}
