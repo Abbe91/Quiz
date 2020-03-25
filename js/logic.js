@@ -125,6 +125,18 @@ function compareGuess(){
         console.log(result);
     })
 }
+
+function toggleToplist() {
+    var topListan = document.getElementById('topLista');
+    if (topListan.style.display === "none") {
+        topListan.style.display = "block";
+        showPints();
+      } else {
+        topListan.style.display = "none";
+      }
+    }
+
+
 function showPints() {
     makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
         
@@ -138,6 +150,8 @@ function showPints() {
              var pUserName = document.createElement('p');
              var pPoints = document.createElement('p');
 
+             pUserName.className = "userLista"
+             pPoints.className = "pointsLista"
              pUserName.innerText = username;
              pPoints.innerText = points;
              row.appendChild(pUserName);

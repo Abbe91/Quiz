@@ -48,3 +48,26 @@ input{
     flex-wrap: wrap;
 }
 
+#topLista {
+   
+    border-radius: 20%;
+    padding: 15px;
+}
+
+.pointsLista {
+    font-weight: 700;
+    padding: 15px;
+}
+
+.userLista {
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    width: 60%;
+    margin: 0 auto;
+    padding:5px;
+}
+
+#toplistaSec {
+    padding: 10px;
+}
