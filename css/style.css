@@ -49,7 +49,7 @@ input{
 }
 
 button:hover {
-    background-color: blue;
+    background: blue;
     color: white;
 }
 

@@ -17,7 +17,7 @@
     <div id="container">
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
-            Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
+            Läs om spelreglerna <br>: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
         </div>
 
         <div class="register">
@@ -26,21 +26,21 @@
                 <!-- Display validation errors here -->
                 <?php include('errors.php') ?>
                 <div class="input-group">
-                    <label>Username</label>
+                    <label>Användarnamn:</label>
                     <input type="text" name="username">
                 </div>
 
                 <div class="input-group">
-                    <label>Password</label>
+                    <label>Lösenord:</label>
                     <input type="password" name="password">
                 </div>
 
                 <div class="input-group">
-                    <button type="submit" name="login" class="btn">Log in</button>
+                    <button type="submit" name="login" class="btn">Logga in</button>
                 </div>
                 <p>
 
-                    Not yet a member? <a href="register.php">Sign up</a>
+                    Har du inte ett konto? <a href="register.php">Registrera dig!</a>
 
                 </p>
             </form>
