@@ -1,7 +1,7 @@
 var computerGuess;
-var userGuessLog =[];
+var userGuessLog = [];
 var attempts = 0;
-var MaxGusses= 10;
+var MaxGusses = 10;
 var points = 9;
 
 function makeRequest(url, method, formdata, callback) {
@@ -18,80 +18,80 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 
-function rules() { 
-    window.open('./rules.html', '_blank'); 
-} 
-
-function gameOver(){
-    document.getElementById('newGameButton').style.display = 'inline';
-    document.getElementById('easyBtn').style.display= 'none';
-    document.getElementById('hardBtn').style.display = 'none';
-    document.getElementById('inputBox').setAttribute('readonly', 'readonly');
-    
-    
+function rules() {
+    window.open('./rules.html', '_blank');
 }
 
-function easyMode(){
-    MaxGusses= 10;
-    document.getElementById('easyBtn').className= 'activeButton';
+function gameOver() {
+    document.getElementById('newGameButton').style.display = 'inline';
+    document.getElementById('easyBtn').style.display = 'none';
+    document.getElementById('hardBtn').style.display = 'none';
+    document.getElementById('inputBox').setAttribute('readonly', 'readonly');
+
+
+}
+
+function easyMode() {
+    MaxGusses = 10;
+    document.getElementById('easyBtn').className = 'activeButton';
     document.getElementById('hardBtn').className = '';
 }
 
-function hardMode(){
+function hardMode() {
     MaxGusses = 5;
-    document.getElementById('easyBtn').className= '';
+    document.getElementById('easyBtn').className = '';
     document.getElementById('hardBtn').className = 'activeButton';
 }
 
-function newGame(){
+function newGame() {
     window.location.reload()
 }
 
-function init(){
+function init() {
     computerGuess = Math.floor(Math.random() * 10 + 1);
-   console.log(computerGuess)
-   document.getElementById('newGameButton').style.display = 'none';
+    console.log(computerGuess)
+    document.getElementById('newGameButton').style.display = 'none';
 }
 
 
 
-function compareGuess(){
+function compareGuess() {
     var pointsBox = document.getElementById('points');
-    var userGuess =" " + document.getElementById('inputBox').value;
+    var userGuess = " " + document.getElementById('inputBox').value;
     console.log(userGuess);
     userGuessLog.push(userGuess);
-    document.getElementById('guessLog').innerHTML= userGuessLog;
+    document.getElementById('guessLog').innerHTML = userGuessLog;
     attempts++;
     document.getElementById('attempts').innerHTML = attempts;
 
 
 
-    if(userGuessLog.length < MaxGusses){
-        if(userGuess > computerGuess){
-            document.getElementById('textOutput').innerHTML =" Siffran är för högt!";
-            document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Fel! Prova igen!";
-            
-            pointsBox.innerHTML = points;
-            points--;    
-
-         
-        } else if(userGuess < computerGuess){
-            document.getElementById('textOutput').innerHTML =" Siffran är för lågt!";
-            document.getElementById('inputBox').value="";
-            document.getElementById('resultat').innerHTML ="Fel! Prova igen!";
+    if (userGuessLog.length < MaxGusses) {
+        if (userGuess > computerGuess) {
+            document.getElementById('textOutput').innerHTML = " Siffran är för högt!";
+            document.getElementById('inputBox').value = "";
+            document.getElementById('resultat').innerHTML = "Fel! Prova igen!";
 
             pointsBox.innerHTML = points;
             points--;
-         
-   
+
+
+        } else if (userGuess < computerGuess) {
+            document.getElementById('textOutput').innerHTML = " Siffran är för lågt!";
+            document.getElementById('inputBox').value = "";
+            document.getElementById('resultat').innerHTML = "Fel! Prova igen!";
+
+            pointsBox.innerHTML = points;
+            points--;
+
+
         } else {
-            document.getElementById('textOutput').innerHTML ="Ditt svar är rätt!";
-            document.getElementById('resultat').innerHTML ="Rätt! Grattis, du vann i " + attempts+ ' försök och samlade ' + points + ' pöang';
+            document.getElementById('textOutput').innerHTML = "Ditt svar är rätt!";
+            document.getElementById('resultat').innerHTML = "Rätt! Grattis, du vann i " + attempts + ' försök och samlade ' + points + ' pöang';
             document.getElementById('container').style.backgroundColor = 'green';
             document.getElementById('points').innerHTML = points;
             gameOver();
-            
+
             var data = new FormData();
 
             data.append("action", "updateScore");
@@ -99,20 +99,20 @@ function compareGuess(){
 
         }
     } else {
-        if(userGuess > computerGuess ){
-            document.getElementById('textOutput').innerHTML ="Game over! " + " Det rätta svaret var "+ computerGuess;
+        if (userGuess > computerGuess) {
+            document.getElementById('textOutput').innerHTML = "Game over! " + " Det rätta svaret var " + computerGuess;
             document.getElementById('container').style.backgroundColor = 'red';
             gameOver();
             document.getElementById('points').innerHTML = 0;
-           
-        }else if (userGuess < computerGuess){
-            document.getElementById('textOutput').innerHTML ="Game over!" + " Det rätta svaret var "+ computerGuess;
+
+        } else if (userGuess < computerGuess) {
+            document.getElementById('textOutput').innerHTML = "Game over!" + " Det rätta svaret var " + computerGuess;
             document.getElementById('container').style.backgroundColor = 'red';
             gameOver();
             document.getElementById('points').innerHTML = 0;
-        
-        }else {
-            document.getElementById('textOutput').innerHTML ="GRATTIS! Ditt svar " + computerGuess + " är korrekt!";
+
+        } else {
+            document.getElementById('textOutput').innerHTML = "GRATTIS! Ditt svar " + computerGuess + " är korrekt!";
             document.getElementById('container').style.backgroundColor = 'green';
             gameOver();
             document.getElementById('points').innerHTML = points;
@@ -120,7 +120,7 @@ function compareGuess(){
     }
 
     makeRequest('./../server/userReciever.php', "POST", data, (result) => {
-        
+
         console.log(result);
     })
 
