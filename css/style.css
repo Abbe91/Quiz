@@ -77,3 +77,10 @@ input{
 #toplistaSec {
     padding: 10px;
 }
+
+@media only screen and (max-width: 400px) {
+    .userLista {
+        font-size: 10px;
+        width: 150px;
+    }
+}
