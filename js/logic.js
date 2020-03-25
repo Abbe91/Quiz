@@ -165,6 +165,6 @@ function showPints() {
 }
 showPints()
 
-function showTheListaOnAnotherSite(){
-    
+function goTilTopLista(){
+    window.open('./topLista.html', '_blank'); 
 }
