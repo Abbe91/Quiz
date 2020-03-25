@@ -29,13 +29,22 @@ if (empty($_SESSION['username'])) {
                 </div>
             <?php endif ?>
             <?php if (isset($_SESSION['username'])) : ?>
-                <p>Välkommen: <strong><?php echo $_SESSION['username'];  ?></strong></p>
+
+                <p>Välkommen: <strong id="inloggedUserName"><?php echo $_SESSION['username']; ?></strong></p>
+
                 <p><a class="logout" href="./index.php?logout='1'" style="color: white;">Logga ut</a></p>
             <?php endif ?>
         </div>
         <div class="panel">
             <h1>Quiz - Gissa siffran!</h1>
             Läs om spelreglerna: <button id="rulesBtn" onclick="rules()" class="">Quiz Guide</button>
+          
+        <section id="toplistaSec">
+            <button onclick="toggleToplist()">Top Lista</button>
+                <div id="topLista">
+                   
+                </div>
+        </section>
 
             <p>Välj svårighetsinställning:</p>
             <button id="easyBtn" onclick="easyMode()" class="">Enkelt (10 försök)</button>
@@ -58,7 +67,7 @@ if (empty($_SESSION['username'])) {
             </div>
 
             <div class="panel">
-                <p>Dina samlade poäng: <br><span id="points">10</span></p>
+                <p>Dina samlade poäng: <br><span id="points">0</span></p>
             </div>
         </div>
         <div>

@@ -20,12 +20,15 @@
         </div>
 
         <div class="register">
+
             <h2>Skapa konto</h2>
+
             <form method="POST" action="register.php">
                 <!-- Display validation errors here -->
                 <?php include ('errors.php') ?>
 
                 <div class="input-group">
+
                     <label>Användarnamn</label>
                     <input type="text" name="username">
                 </div>
@@ -47,6 +50,7 @@
                 <p>
 
                     Har du redan konto? <br> <a href="login.php">Logga in här</a>
+
 
                 </p>
             </form>

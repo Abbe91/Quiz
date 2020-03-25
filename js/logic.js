@@ -15,8 +15,7 @@ function makeRequest(url, method, formdata, callback) {
     }).catch((err) => {
         console.log("Error: ", err)
     })
-}
-
+}      
 
 function rules() { 
     window.open('./rules.html', '_blank'); 
@@ -56,6 +55,7 @@ function init(){
 
 
 function compareGuess(){
+    
     var pointsBox = document.getElementById('points');
     var userGuess =" " + document.getElementById('inputBox').value;
     console.log(userGuess);
@@ -63,8 +63,6 @@ function compareGuess(){
     document.getElementById('guessLog').innerHTML= userGuessLog;
     attempts++;
     document.getElementById('attempts').innerHTML = attempts;
-
-
 
     if(userGuessLog.length < MaxGusses){
         if(userGuess > computerGuess){
@@ -90,12 +88,15 @@ function compareGuess(){
             document.getElementById('resultat').innerHTML ="Rätt! Grattis, du vann i " + attempts+ ' försök och samlade ' + points + ' pöang';
             document.getElementById('container').style.backgroundColor = 'green';
             document.getElementById('points').innerHTML = points;
-            gameOver();
-            
+            gameOver(); 
+
+            var inloggedUserName = document.getElementById("inloggedUserName").textContent;
+
             var data = new FormData();
 
             data.append("action", "updateScore");
-            data.append("points", userGuess);
+            data.append("points", points);
+            data.append("inloggedUserName", inloggedUserName);
 
         }
     } else {
@@ -119,9 +120,46 @@ function compareGuess(){
         }
     }
 
-    makeRequest('./../server/userReciever.php', "POST", data, (result) => {
+    makeRequest('../server/userReciever.php', "POST", data, (result) => {
         
         console.log(result);
     })
+}
 
+function toggleToplist() {
+    var topListan = document.getElementById('topLista');
+    if (topListan.style.display === "none") {
+        topListan.style.display = "block";
+        showPints();
+      } else {
+        topListan.style.display = "none";
+      }
+    }
+
+
+function showPints() {
+    makeRequest("../server/listaReciever.php?action=getlista", "GET", null, (result) => {
+        
+        var topListan = document.getElementById('topLista');
+      
+         for (let i = 0; i < result.length; i++) {
+             var username = (result[i].username)
+             var points = (result[i].points)
+             var row = document.createElement('div');
+
+             var pUserName = document.createElement('p');
+             var pPoints = document.createElement('p');
+
+             pUserName.className = "userLista"
+             pPoints.className = "pointsLista"
+             pUserName.innerText = username;
+             pPoints.innerText = points;
+             row.appendChild(pUserName);
+             row.appendChild(pPoints);
+             topListan.appendChild(row);
+           
+
+         }
+
+    })
 }
