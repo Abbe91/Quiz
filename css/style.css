@@ -48,3 +48,8 @@ input{
     flex-wrap: wrap;
 }
 
+button:hover {
+    background-color: blue;
+    color: white;
+}
+
